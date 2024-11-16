@@ -1,4 +1,6 @@
 import json
+from xml.etree.ElementTree import tostring
+
 import discord
 from discord.ext import commands
 from pushDocs import setToGoogleSheet
@@ -99,6 +101,8 @@ async def on_message(message):
             # Copie et renvoie le message
             if message.embeds:
                 embed = message.embeds[0]
+                print(embed)
+                print(tostring(embed))
                 embed_harem_name = embed.author.name
                 user_id = list(user_messages.keys())[-1]
                 harem_dict["harem"] = embed_harem_name
