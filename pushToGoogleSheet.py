@@ -26,9 +26,11 @@ async def update_google_sheet(data, harem_owner_name):
     updates = []
     for i, value in enumerate(data['characters']):
         row = start_row + i
+        updates.append({'range': f"B{row}", 'values': [[value['sex']+str(i+1)]]})
         updates.append({'range': f"C{row}", 'values': [[value['author_name']]]})
         updates.append({'range': f"D{row}", 'values': [[f'=IMAGE("{value["image_url"]}")']]})
         updates.append({'range': f"E{row}", 'values': [[value['description_part']]]})
+        updates.append({'range': f"F{row}", 'values': [[value['kakera']]]})
 
     # Envoyer les requêtes par lot
     try:

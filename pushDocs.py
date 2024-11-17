@@ -5,6 +5,7 @@ def load_harem_dict(harem_name):
     try:
         with open(f"harem_data_{harem_name}.json", "r") as file:
             harem_dict = json.load(file)
+            harem_dict = harem_dict["harem"]
             return harem_dict
     except FileNotFoundError:
         raise FileNotFoundError(f"Le fichier 'harem_data{harem_name}.json' n'a pas été trouvé.")
