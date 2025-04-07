@@ -9,7 +9,7 @@ async def update_google_sheet(data, harem_owner_name):
     scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 
     # Charger les identifiants à partir du fichier JSON
-    creds = Credentials.from_service_account_file("API_KEY/testapi-441816-3660e34de71c.json", scopes=scope)
+    creds = Credentials.from_service_account_file("API_KEY/apiKeyGoogle.json", scopes=scope)
 
     # Connexion à Google Sheets
     client = gspread.authorize(creds)

@@ -20,7 +20,7 @@ def get_waifu_list(harem_name):
 
 async def setToGoogleSheet(harem_name):
     # Charger le fichier de configuration
-    with open('config.json') as config_file:
+    with open('API_KEY/config.json') as config_file:
         config = json.load(config_file)
     harem_dict = get_waifu_list(harem_name)
     if harem_name == "nax0s_":
